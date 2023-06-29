@@ -4,6 +4,8 @@ import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./scenes/Navbar";
 import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing";
+import LineGradient from "./components/LineGradient";
+import MySkills from "./scenes/MySkills";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -27,13 +29,7 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <div
-        className="
-          w-5/6
-          mx-auto
-          md:h-full
-        "
-      >
+      <div className="w-5/6 mx-auto md:h-full">
         {isAboveMediumScreens && (
           <DotGroup
             selectedPage={selectedPage}
@@ -41,6 +37,11 @@ function App() {
           />
         )}
         <Landing setSelectedPage={setSelectedPage} />
+      </div>
+      <LineGradient />
+
+      <div className="w-5/6 mx-auto md:h-full">
+        <MySkills />
       </div>
     </div>
   );
