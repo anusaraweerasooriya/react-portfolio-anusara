@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Testimonials = () => {
 
-  const testamonialStyles = `
+  const testimonialStyles = `
     mx-auto
     relative
     max-w-[400px]
@@ -12,7 +12,7 @@ const Testimonials = () => {
     flex
     flex-col
     justify-end
-    pt-16
+    p-16
     mt-48
     before:absolute
     before:top-[-120px]
@@ -63,6 +63,57 @@ const Testimonials = () => {
           gap-8
         "
       >
+        <motion.div
+           className={`bg-blue ${testimonialStyles} before:content-person1`}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, amount: 0.5}}
+           transition={{ duration: 0.5}}
+           variants={{
+               hidden: { opacity: 0, scale: 0.8},
+               visible: { opacity: 1, scale: 1}
+           }}
+        >
+          <p className="font-playfair text-6xl">"</p>
+          <p className="text-center text-xl">
+            Random testimonial 1
+          </p>
+        </motion.div>
+
+        <motion.div
+           className={`bg-red ${testimonialStyles} before:content-person2`}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, amount: 0.5}}
+           transition={{delay: 0.2, duration: 0.5}}
+           variants={{
+               hidden: { opacity: 0, scale: 0.8},
+               visible: { opacity: 1, scale: 1}
+           }}
+        >
+          <p className="font-playfair text-6xl">"</p>
+          <p className="text-center text-xl">
+            Random testimonial 2
+          </p>
+        </motion.div>
+
+        <motion.div
+           className={`bg-yellow ${testimonialStyles} before:content-person3`}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, amount: 0.5}}
+           transition={{delay: 0.4, duration: 0.5}}
+           variants={{
+               hidden: { opacity: 0, scale: 0.8},
+               visible: { opacity: 1, scale: 1}
+           }}
+        >
+          <p className="font-playfair text-6xl">"</p>
+          <p className="text-center text-xl">
+            Random testimonial 3
+          </p>
+        </motion.div>
+
 
       </div>
 
